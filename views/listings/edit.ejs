@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> -->
+
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+  <div class="row">
+   <div class="col-8 offset-2 ">
+     <h1>Edit your listing</h1>
+     <form method="POST" action="/listings/<%=listing._id %>?_method=PUT" enctype="multipart/form-data">
+
+     <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input class="form-control" type="text" name="listing[title]" value="<%=listing.title%>">
+     </div>   
+        
+     <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea  class="form-control" name="listing[description]"  ><%=listing.description%></textarea>
+      </div>
+      <div class="mb-3 ">  
+      <img src="<%=listing.image.url%>" class="img-fluid mb-3" style="max-height: 200px;" alt="image">
+
+     </div>
+      <div class="mb-3"></div>   
+        <label for="image" class="form-label">Upload new Image</label>
+        <input class="form-control" type="file" name="listing[image]" >
+     </div>
+     <div class="mb-3">
+        <label for="price" class="form-label">price</label>
+        <input class="form-control" type="number" name="listing[price]" value="<%=listing.price%>">
+     </div>
+     <div class="mb-3 ">
+            <label for="country" class="form-label">Country</label>
+           <input class="form-control" type="text" name="listing[country]" value="<%=listing.country%>">
+     </div>
+     <div class="mb-3">
+         <label for="location" class="form-label">Location</label>
+        <input class="form-control" type="text" name="listing[location]" value="<%=listing.location%>" >
+     </div>
+     
+        <br>
+        
+        <button class="btn btn-dark">add</button>
+     </form>
+   </div> 
+ </div>   
+</body>

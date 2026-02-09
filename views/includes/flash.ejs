@@ -1,0 +1,15 @@
+<% if(success && success.length) { %>
+<div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert"> 
+     <%= success %>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+<% } %>
+
+<!-- in this file  we check if success and success length is exist then success alerat will show on the my webpage . and by default in express-session  success variable is a array . -->
+
+<% if(error && error.length) { %>
+<div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert"> 
+     <%= error %>
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+<% } %>
